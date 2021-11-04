@@ -1,0 +1,42 @@
+body {
+    background-color:wheat;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+footer {
+    color:tan;
+}
+
+h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h2 {
+    text-align: left;
+    background-color: palegoldenrod;
+    font-family: cursive;
+    font-variant: normal;
+    padding: 10px;
+    color:maroon;
+}
+
+#root {
+    background-color: floralwhite;
+    text-align: center;
+    text-shadow: gray; 
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: rgba(216, 213, 7, 0.8);
+    padding: 10px;
+  }
+  .grid-item {
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 5px solid rgba(216, 213, 7, 0.8);
+    padding: 15px;
+    font-size: 15px;
+    text-align:right;
+  }

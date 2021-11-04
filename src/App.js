@@ -1,6 +1,15 @@
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
+
 function App() {
   return (
-    <div>Food Menu generator</div>
+    <div>
+      <Header />
+      <Main />
+      <Footer />
+    </div>
+    
   );
 }
 
