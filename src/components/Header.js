@@ -1,7 +1,7 @@
 function Header() {
     return (
         <header>
-            <h1>Food Menu generator</h1>
+            <h1>Local Restaurant</h1>
         </header>
     );
 }
