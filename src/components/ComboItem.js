@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 
 class ComboItem extends React.Component {
@@ -5,28 +6,27 @@ class ComboItem extends React.Component {
     constructor(){
         super();
         this.state = {
-            name: "",
             foodImage: ""
         }
     }
     componentDidMount(){
-        fetch("https://foodish-api.herokuapp.com/api")
-       
-            .then(response => response.json() )
-            .then((result) => {
-                console.log(result.image);
-                this.setState({
-                    foodImage: result.image
-                });
-                
-            }
-            )
+        let baseURL = "https://foodish-api.herokuapp.com/api/";
+        axios.get(baseURL).then((res) => {
+            this.setState({
+                foodImage: res.data.image
+            })
+        }).catch(error => {
+            this.setState({
+                foodImage: `${process.env.PUBLIC_URL}/images/default-img.png`
+            })
+        })
     }
 
     render(){
-        let random = Math.floor(Math.random() * 10);
-        return (
-            <div className="grid-item">
+    let random = Math.floor(Math.random() * 10);
+
+    return (
+        <div className="grid-item">
             <div>
                 <img 
                 src={this.state.foodImage} 
@@ -41,12 +41,10 @@ class ComboItem extends React.Component {
                 <p>Sides: some text</p>
                 <p>Dessert: some text</p>
                 <p>Price: ${random}.45</p>
-            </div>
-                
-            </div>
-        );
-        }
-    
+            </div>   
+        </div>
+    );   
+}
 }
 
 export default ComboItem;
